@@ -5,9 +5,28 @@
 
 1. To run this code use `git clone https://github.com/davidbombal/python-keylogger.git`
 2. Run the command `cd python-keylogger`
-3. Create Virtual Environment in Windows. Using command `<python_path>\py -m venv keylogger_env`
-4. Run command `keylogger_env\Scripts\activate`
-5. Run the command `pip install -r requirements.txt` to install all the packages required in your virtual environment.
+3. Create Virtual Environment. Using command 
+```
+apt install python3.10-venv -y
+python3 -m venv keylogger_env
+```
+4. Run command 
+ ```
+ # Window
+ keylogger_env\Scripts\activate
+ # Linux
+ chmode +x keylogger_env/bin/activate
+ source keylogger_env\bin\activate
+ ```
+5. Run the command to install all the packages required in your virtual environment.
+```
+apt-get install python3.10-dev -y
+pip install -r requirements.txt
+```
 6. Run `py keylogger.py` this will run the program.
 
 ### To get the file to run on Windows 11 evading the antivirus I compiled the PyInstaller bootloader locally using Microsoft C/C++ compiler, and then used it to compile the code.
+```
+pip install pyinstaller
+pyinstaller -F keylogger.py --noconsole
+```
